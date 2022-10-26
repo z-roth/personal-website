@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export const BlogLink = ({ title, description, id, imgSrc }) => {
@@ -10,7 +11,7 @@ export const BlogLink = ({ title, description, id, imgSrc }) => {
       >
         <h1 className="text-lg font-semibold">{title}</h1>
         <p>{description}</p>
-        <img src={imgSrc} className="p-2 h-36 rounded-xl"></img>
+        <Image src={imgSrc} className="p-2 h-36 rounded-xl" alt={title} />
       </div>
     </Link>
   );

@@ -1,10 +1,12 @@
+import Link from "next/link";
+
 const About = () => {
   return (
     <div className="p-6 fade-in-page">
       <h1 className="text-5xl m-3">
-        <a href="/">
+        <Link href="/">
           <b>zachary roth </b>
-        </a>
+        </Link>
         / about
       </h1>
       <h3 className="text-2xl m-3">
