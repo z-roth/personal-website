@@ -4,7 +4,7 @@ const Blog = () => {
   return (
     <div className="flex flex-col p-3 fade-in-page h-screen justify-center items-center">
       <h1 className="text-4xl font-bold m-6">Web Dev for Noobs: A Blog</h1>
-      <div className="flex flex-row justify-around items-center h-fit">
+      <div className="flex flex-row justify-between gap-4 items-center h-fit ">
         <BlogLink
           title="The building blocks."
           description="HTML, CSS, and JavaScript."
