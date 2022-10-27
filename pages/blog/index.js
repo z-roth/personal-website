@@ -2,22 +2,26 @@ import { BlogLink } from "../../components/blog-link";
 
 const Blog = () => {
   return (
-    <div className="p-3 fade-in-page">
-      <h1 className="text-4xl font-bold m-6">
-        The State of Web Development: A Blog
-      </h1>
-      <div className="flex flex-row justify-around items-center">
+    <div className="flex flex-col p-3 fade-in-page h-screen justify-center items-center">
+      <h1 className="text-4xl font-bold m-6">Web Dev for Noobs: A Blog</h1>
+      <div className="flex flex-row justify-around items-center h-fit">
         <BlogLink
-          title="Where it's been."
-          description="The early days of the web."
+          title="The building blocks."
+          description="HTML, CSS, and JavaScript."
           id={1}
-          imgSrc="/images/blog1.jpg"
+          imgSrc="/images/blog1.jpeg"
         />
-        <BlogLink title="Where it's at." description="The web we use" id={2} />
         <BlogLink
-          title="Where it's going."
-          description="What the web might look like soon."
+          title="Modern Web Applications."
+          description="Frameworks and libraries galore."
+          id={2}
+          imgSrc="/images/blog2.png"
+        />
+        <BlogLink
+          title="How to get started."
+          description="Dive right in."
           id={3}
+          imgSrc="/images/blog3.jfif"
         />
       </div>
     </div>
