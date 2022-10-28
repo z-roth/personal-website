@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Prism } from "@mantine/prism";
+import Head from "next/head";
 
 const Blog1 = () => {
   const date = new Date();
@@ -19,12 +20,18 @@ const Blog1 = () => {
   <input placeholder="Put some text here..."/>
 </div>`;
 
-  const css = ``;
+  const css = `
+  let counterDisplayElem = document.querySelector('.counter-display');
+  let counterMinusElem = document.querySelector('.counter-minus');
+  let counterPlusElem = document.querySelector('.counter-plus');`;
 
   const javascript = ``;
 
   return (
     <div>
+      <Head>
+        <title>zachary roth - blog</title>
+      </Head>
       <article className="fade-in-page container prose">
         <div className="static ">
           <div className=" bg-secondary p-4 rounded-md">
@@ -139,7 +146,12 @@ const Blog1 = () => {
               <li>Task 2</li>
               <li>Task 3</li>
             </ol>
-            <button className="bg-secondary p-2 text-primaryLight rounded-full">
+            <button
+              className="bg-secondary p-2 text-primaryLight rounded-full"
+              onClick={() => {
+                alert("Click!");
+              }}
+            >
               Click Me
             </button>
             <br />
@@ -158,7 +170,7 @@ const Blog1 = () => {
             <p className=" text-secondary text-center">
               Change the color of text
             </p>
-            <div className="text-center text-primaryLight bg-secondary h-24 relative ">
+            <div className="text-center text-primaryLight bg-secondary h-24 relative mb-4">
               <p className="absolute top-4 right-3">
                 Change the positioning of text
               </p>

@@ -1,6 +1,11 @@
+import Head from "next/head";
+
 const Blog3 = () => {
   return (
     <div>
+      <Head>
+        <title>zachary roth - blog</title>
+      </Head>
       <article className="prose">
         <h1>How to get started.</h1>
         <h2>
@@ -12,7 +17,7 @@ const Blog3 = () => {
           There are so many good ways to learn web development. However,
           you&apos;re not going to learn it just by reading the blog of some
           random guy on the internet. You&apos;re going to have to get into the
-          meat of it yourself.
+          meat of it yourself!
         </p>
         <p>
           While everyone learns in different ways, I strongly believe that the
@@ -34,11 +39,11 @@ const Blog3 = () => {
         <p>
           There are tons of resources and tutorials online for building projects
           like these. I&apos;d highly recommend checking out YouTube, especially
-          content creator Web Dev Simplified. He has tons of tutorials on some
-          simple projects using the building blocks of HTML, CSS, and JS, all
-          the way up to more advanced projects with React and databases. I was
-          able to learn a lot of my skills, thanks to him! Here&apos;s one of
-          his videos on how to create a calculator.
+          content creator Web Dev Simplified as I mentioned before. He has tons
+          of tutorials on some simple projects using the building blocks of
+          HTML, CSS, and JS, all the way up to more advanced projects with React
+          and databases. I was able to learn a lot of my skills, thanks to him!
+          Here&apos;s one of his videos on how to create a calculator.
         </p>
         <iframe
           width="560"
@@ -76,26 +81,31 @@ const Blog3 = () => {
           Of course, working as a part of a team helps you develop tons of
           valuable soft skills, in addition to your technical skills. Skills
           like technical communication, leadership, collaboration, and so much
-          more.
+          more. These soft skills will be extremely valuable as you begin to
+          navigate your professional career in web development and working in a
+          team.
         </p>
         <p>
           Moreover, by working together with other developers, you get to learn
           the technical side of working together in software. With many
           developers working together, but separately, on one codebase,
           there&apos;s a need to make sure that everything is up to date for
-          everyone. Software teams will use a version control system - or a VCS
-          - to track changes to the codebase. By far, the most popular VCS is
-          Git. In addition, there are online services like GitHub and GitLab
+          everyone. Software teams will often use a version control system - or
+          a VCS - to track changes to the codebase. By far, the most popular VCS
+          is Git. In addition, there are online services like GitHub and GitLab
           that allow for teams to host their codebases remotely. These services
           also have tons of features that allow for more collaboration, like
-          code reviewing, issue tickets, pull requests, and so much more. While
-          you can use VCS on your personal projects as well, it is vital for
-          team projects.
+          code reviewing, issue tickets, pull requests, and so much more. You
+          can also use VCS on your personal projects as well!
         </p>
         <h4>Networking Opportunities</h4>
         <p>
           Another one of the benefits of working within a professional team are
-          the networking opportunities.
+          the networking opportunities. By being in a team of diverse developers
+          from all sorts of technical backgrounds, who knows if an opportunity
+          may arise in the future that they might know of, or that you can
+          offer! Connecting with LinkedIn is just one of many ways to network
+          professionally.
         </p>
         <h4>Stand Out to Employers</h4>
         <p>
@@ -105,6 +115,12 @@ const Blog3 = () => {
           effort into creating content that reinforces your skills. Working on
           team projects show that you&apos;re experience in collaborating on a
           software product - something you would do at a company too.
+        </p>
+        <h4>Make new friends!</h4>
+        <p>
+          One of my favorite parts about joining a club is just getting to meet
+          new people and make new friends! Especially for college students,
+          clubs are a great way to meet new people and branch out.
         </p>
         <h3>So what are you waiting for???</h3>
         <p>
