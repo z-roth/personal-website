@@ -1,12 +1,20 @@
 import Head from "next/head";
+import Image from "next/image";
 
 const Blog3 = () => {
   return (
-    <div>
+    <div className="items-center justify-center h-screen">
       <Head>
-        <title>zachary roth - blog</title>
+        <title>Web Dev for Noobs</title>
       </Head>
-      <article className="prose">
+      <article className="prose ml-auto mr-auto">
+        <Image
+          src="/images/blog3.jfif"
+          height="768px"
+          width="768px"
+          className="rounded"
+          alt="jump in"
+        />
         <h1>How to get started.</h1>
         <h2>
           You&apos;ve learned about the building blocks of web pages and the
@@ -27,8 +35,8 @@ const Blog3 = () => {
         <p>
           Building a personal project is an amazing way to flex your web dev
           muscles. There are so many different types of projects you can create,
-          ranging in all sorts of different difficulties. Here&apos;s a couple
-          of examples of some simple beginner projects that you can create:
+          ranging in all sorts of different difficulties. Here are a couple
+          of examples of simple beginner projects that you can create:
         </p>
         <ul>
           <li>A to-do list app</li>
@@ -58,7 +66,7 @@ const Blog3 = () => {
           developers to work with. If you&apos;re in college or a high school
           student, check out your school&apos;s clubs and organizations. If
           there&apos;s a coding, software, or web development club (or something
-          similiar), go check it out! If there isn&apos;t a club, try and make
+          similar), go check it out! If there isn&apos;t a club, try and make
           one - if you build it, they will come!
         </p>
         <p>
@@ -95,7 +103,7 @@ const Blog3 = () => {
           is Git. In addition, there are online services like GitHub and GitLab
           that allow for teams to host their codebases remotely. These services
           also have tons of features that allow for more collaboration, like
-          code reviewing, issue tickets, pull requests, and so much more. You
+          code reviews, issue tickets, pull requests, and so much more. You
           can also use VCS on your personal projects as well!
         </p>
         <h4>Networking Opportunities</h4>
@@ -113,7 +121,7 @@ const Blog3 = () => {
           flag for recruiters. Having personal projects proves that you are
           passionate about the field - on your own time, you&apos;ve invested
           effort into creating content that reinforces your skills. Working on
-          team projects show that you&apos;re experience in collaborating on a
+          team projects show that you&apos;re experienced in collaborating on a
           software product - something you would do at a company too.
         </p>
         <h4>Make new friends!</h4>
