@@ -42,8 +42,8 @@ const Blog1 = () => {
                   My name is Zack.
                 </a>
               </Link>{" "}
-              I&apos;ll be your tour guide this evening. Or morning. Or afternoon. I
-              don&apos;t know what time it is there.
+              I&apos;ll be your tour guide this evening. Or morning. Or
+              afternoon. I don&apos;t know what time it is there.
             </h2>
           </div>
 
@@ -54,23 +54,24 @@ const Blog1 = () => {
               minute: "2-digit",
             })}
             . I used a little bit of magic there to figure it out. Hopefully,
-            I&apos;ll be able to teach you how to use magic too. No guarantees on
-            casting spells, however.
+            I&apos;ll be able to teach you how to use magic too. No guarantees
+            on casting spells, however.
           </p>
 
           <h2 className="text-xl font-semibold ">
             So, what is web development, you might ask?
           </h2>
           <p>
-            As I am sure you are aware, there&apos;s this software platform called
-            the World Wide Web. In fact, you&apos;re actually using it right now!
+            As I am sure you are aware, there&apos;s this software platform
+            called the World Wide Web. In fact, you&apos;re actually using it
+            right now!
           </p>
           <p>
             One of my favorite things about the web is that it&apos;s a software
-            platform that pretty much any device can access nowadays. That&apos;s
-            what makes it so incredibly powerful - its accessibility. That&apos;s
-            also what makes me love it so much, as I want to create software
-            that can be used by just about anyone.
+            platform that pretty much any device can access nowadays.
+            That&apos;s what makes it so incredibly powerful - its
+            accessibility. That&apos;s also what makes me love it so much, as I
+            want to create software that can be used by just about anyone.
           </p>
           <p>
             The world wide web consists of all sorts of different websites, with
@@ -94,10 +95,10 @@ const Blog1 = () => {
           <h3 className="text-lg font-semibold ">HTML</h3>
           <p>
             First off, I hate to break it to you, but HTML is not a coding
-            language. It&apos;s actually of a structural language. HTML stands for
-            HyperText Markup Language. HTML has a hierarchical structure, which
-            splits up web pages in to separate little pieces. Each piece is
-            called a tag, which has an opening and closing bracket. Different
+            language. It&apos;s actually of a structural language. HTML stands
+            for HyperText Markup Language. HTML has a hierarchical structure,
+            which splits up web pages in to separate little pieces. Each piece
+            is called a tag, which has an opening and closing bracket. Different
             kinds of HTML tags tell the browser to render it in certain ways.
             Here&apos;s a little preview of some HTML below.
           </p>
@@ -105,8 +106,8 @@ const Blog1 = () => {
             {html}
           </Prism>
           <p>
-            The {"<div>"} tag is a basic divider. It&apos;s great for splitting up
-            your HTML into different pieces.
+            The {"<div>"} tag is a basic divider. It&apos;s great for splitting
+            up your HTML into different pieces.
           </p>
           <p>
             The {"<h1>"} tag declares a heading. In this case, {"<h1>"} is
@@ -143,7 +144,10 @@ const Blog1 = () => {
             </button>
             <br />
             <br />
-            <input placeholder="Put some text here..." className="border" />
+            <input
+              placeholder="Put some text here..."
+              className="border rounded"
+            />
           </div>
           <h3 className="text-lg font-semibold ">CSS</h3>
           <p>
@@ -172,9 +176,9 @@ const Blog1 = () => {
             Last up, we have JavaScript. JavaScript is a more conventional
             programming language that enables interactivity in websites - it
             makes them truly functional. While a website like this, with mostly
-            text and little interactivity, won&apos;t have much JavaScript, it&apos;s used
-            all over the web, especially for more application-based web
-            programs, like Twitter, for example.{" "}
+            text and little interactivity, won&apos;t have much JavaScript,
+            it&apos;s used all over the web, especially for more
+            application-based web programs, like Twitter, for example.{" "}
             <span>
               <Link href="https://twitter.com/webdevfornoobs">
                 <a className="text-secondary underline">
@@ -184,14 +188,15 @@ const Blog1 = () => {
             </span>
           </p>
           <p>
-            Below is a little code snippet of some JavaScript. It&apos;s super simple
-            - when you click the add button, it increments the counter. When you
-            click the subtract button, it decrements.
+            Below is a little code snippet of some JavaScript. It&apos;s super
+            simple - when you click the add button, it increments the counter.
+            When you click the subtract button, it decrements.
           </p>
           <h2>Conclusion</h2>
           <p>
             Now that you have an understanding of what HTML, CSS, and JavaScript
-            is, you&apos;re one step closer to making the website of your dreams.
+            is, you&apos;re one step closer to making the website of your
+            dreams.
           </p>
           <p>
             In years past, plain HTML, CSS, and JavaScript were used to create
