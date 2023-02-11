@@ -1,14 +1,24 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 
 const Blog2 = () => {
   return (
-    <div>
+    <div className="items-center justify-center h-screen">
       <Head>
-        <title>zachary roth - blog</title>
+        <title>Web Dev for Noobs</title>
       </Head>
-      <article className="prose">
-        <h1>Creating Modern Web Applications with Libraries and Frameworks</h1>
+      <article className="prose ml-auto mr-auto">
+        <Image
+          src="/images/blog2.png"
+          height="400px"
+          width="768px"
+          className="rounded"
+          alt="frameworks and libraries"
+        />
+        <h1 className="text-center">
+          Creating Modern Web Applications with Libraries and Frameworks
+        </h1>
         <h2>
           Now that you have a good understanding of the languages that the web
           is built on technology wise, the next step in learning web development
@@ -42,28 +52,26 @@ const Blog2 = () => {
           React, created by Meta, is a JavaScript library that makes building
           frontends easy and efficient. React introduces components, which are
           reusable snippets of HTML, JavaScript, and CSS. This streamlines the
-          development process, making website be able to split up into their own
-          portable pieces, and each piece having its own functionality. Compared
-          to vanilla JavaScript and HTML/CSS, which requires a lot more
+          development process, making websites be able to split up into their
+          own portable pieces, and each piece having its own functionality.
+          Compared to vanilla JavaScript and HTML/CSS, which requires a lot more
           boilerplate code, React makes building websites quicker and more
           efficient.
         </p>
         <p>
           I would definitely look into learning React as a starting web library
-          - that's how I got into web development myself. Learning React may
-          take some time, but luckily there are tons of resouces that are
-          available online. I'd highly recommend Mosh Hamedani&apos;s React
-          tutorial, linked below. It's a long video, but I'd definitely
-          recommend it!
+          - that&apos;s how I got into web development myself. Learning React
+          may take some time, but luckily there are tons of resources that are
+          available online. I&apos;d highly recommend Mosh Hamedani&apos;s React
+          tutorial, linked below. It&apos;s a long video, but I&apos;d
+          definitely recommend it!
         </p>
         <iframe
           width="560"
           height="315"
           src="https://www.youtube.com/embed/Ke90Tje7VS0"
           title="YouTube video player"
-          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
         ></iframe>
         <h3>CSS Libraries</h3>
         <p>
@@ -72,8 +80,8 @@ const Blog2 = () => {
           especially when you have a large-scale application with hundreds of
           classes and components - CSS can become very complex very quickly.
           Hence, there are tons of libraries out there that are great for
-          default CSS styles and increased ease of use. Here's a couple that I
-          like to use.
+          default CSS styles and increased ease of use. Here&apos;s a couple
+          that I like to use.
         </p>
         <h4>Bootstrap</h4>
         <p>
@@ -92,16 +100,16 @@ const Blog2 = () => {
           quickly and easily style components. One of the things that I love the
           most is that you can configure it to have dark mode and light mode, in
           addition to themes for primary and secondary colors that can be used
-          across your web page. While it doesn't have pre-made components like
-          Bootstrap does, you can create your own components that look cleanly
-          styled with the help of Tailwind.
+          across your web page. While it doesn&apos;t have pre-made components
+          like Bootstrap does, you can create your own components that look
+          cleanly styled with the help of Tailwind.
         </p>
         <h3>Backends</h3>
         <p>
           Backends, unlike frontends, contain all of the information and
           functions that the user cannot see. A lot of what they do includes
           sending and receiving data to and from the frontend, and also sending
-          and recieving data from a database.
+          and receiving data from a database.
         </p>
         <p>
           Traditionally, back-ends are written all sorts of different
@@ -112,22 +120,20 @@ const Blog2 = () => {
         </p>
         <p>
           Another backend technology that you should definitely look into is
-          Express. It's been called "the de facto standard server framework for
-          Node.js". It can handle requests for data from the frontend, send data
-          to the frontend, and run a server, all using JavaScript. While
-          discussing all of what Express does and its features are a little bit
-          out of my own scope, I would definitely recommend checking out the
-          following video by one of the best web development tutorial YouTubers
-          out there, Web Dev Simplified.
+          Express. It&apos;s been called &quot;the de facto standard server
+          framework for Node.js&quot;. It can handle requests for data from the
+          frontend, send data to the frontend, and run a server, all using
+          JavaScript. While discussing all of what Express does and its features
+          are a little bit out of my own scope, I would definitely recommend
+          checking out the following video by one of the best web development
+          tutorial YouTubers out there, Web Dev Simplified.
         </p>
         <iframe
           width="560"
           height="315"
           src="https://www.youtube.com/embed/SccSCuHhOw0"
           title="YouTube video player"
-          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
         ></iframe>
         <h3>How to create a website like this one</h3>
         <p>

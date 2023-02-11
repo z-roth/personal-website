@@ -2,14 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { Prism } from "@mantine/prism";
 import Head from "next/head";
+import { useState } from "react";
 
 const Blog1 = () => {
   const date = new Date();
+  const [counter, setCounter] = useState(0);
 
   const html = `
   <div>
   <h1>This is the first heading.</h1>
-  <p>Here, we have a paragraph. We can write a whole lot of stuff in here.</p>
+  <p>Here, we have a paragraph. We can write a whole lot of stuff here.</p>
   <ol>
     <li>Task 1</li>
     <li>Task 2</li>
@@ -21,33 +23,81 @@ const Blog1 = () => {
 </div>`;
 
   const css = `
-  let counterDisplayElem = document.querySelector('.counter-display');
-  let counterMinusElem = document.querySelector('.counter-minus');
-  let counterPlusElem = document.querySelector('.counter-plus');`;
+  .color-change {
+    color: rgb(95 167 118);
+    text-align: center;
+  }
 
-  const javascript = ``;
+  .reposition-text-container {
+    text-align: center;
+    background-color: rgb(95 167 118);
+    height: 6rem;
+    margin-bottom: 4rem;
+  }
+
+  .reposition-text {
+    position: absolute;
+    top: 1rem;
+    right: 0.75rem;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(-25%);
+      animation-timing-function: cubic-bezier(0.8,0,1,1);
+    }
+    50% {
+      transform: none;
+      animation-timing-function: cubic-bezier(0,0,0.2,1);
+    }
+  }
+
+  #animate-bounce {
+    animation: bounce 1s infinite;
+  }
+  `;
+
+  const javascript = `let counterDisplayElem = document.querySelector('.counter-display');
+  let counterMinusElem = document.querySelector('.counter-minus');
+  let counterPlusElem = document.querySelector('.counter-plus');
+  
+  let count = 0;
+  
+  updateDisplay();
+  
+  counterPlusElem.addEventListener("click",()=>{
+      count++;
+      updateDisplay();
+  }) ;
+  
+  counterMinusElem.addEventListener("click",()=>{
+      count--;
+      updateDisplay();
+  });
+  
+  function updateDisplay(){
+      counterDisplayElem.innerHTML = count;
+  };`;
 
   return (
-    <div>
+    <div className="items-center justify-center h-screen">
       <Head>
-        <title>zachary roth - blog</title>
+        <title>Web Dev for Noobs</title>
       </Head>
-      <article className="fade-in-page container prose">
-        <div className="static ">
-          <div className=" bg-secondary p-4 rounded-md">
+      <article className="fade-in-page container prose ml-auto mr-auto">
+        <div className="static">
+          <div className="p-4 rounded-md extend-width">
             <Image
               src="/images/blog1.jpeg"
               height="400px"
               width="768px"
-              className="static"
+              className="static rounded-md"
               alt="header"
             />
-            <h1 className="text-center text-primaryLight">Welcome!</h1>
-            <h2 className="text-center text-primaryLight">
+            <h1 className="text-center">Welcome!</h1>
+            <h2 className="text-center">
               <Link href="/about">
-                <a className="font-semibold underline text-primaryLight">
-                  My name is Zack.
-                </a>
+                <a className="font-semibold underline">My name is Zack.</a>
               </Link>{" "}
               I&apos;ll be your tour guide this evening. Or morning. Or
               afternoon. I don&apos;t know what time it is there.
@@ -86,7 +136,7 @@ const Blog1 = () => {
             interact with these pages via a web browser. Safari, Chrome,
             Firefox, and Brave are just a few. However, while the browsers might
             look and feel different, they all perform the same task - rendering
-            web sites and pages.
+            websites and pages.
           </p>
 
           <h2 className="text-xl font-semibold ">
@@ -102,12 +152,12 @@ const Blog1 = () => {
           <h3 className="text-lg font-semibold ">HTML</h3>
           <p>
             First off, I hate to break it to you, but HTML is not a coding
-            language. It&apos;s actually of a structural language. HTML stands
-            for HyperText Markup Language. HTML has a hierarchical structure,
-            which splits up web pages in to separate little pieces. Each piece
-            is called a tag, which has an opening and closing bracket. Different
-            kinds of HTML tags tell the browser to render it in certain ways.
-            Here&apos;s a little preview of some HTML below.
+            language. It&apos;s actually more of a structural language. HTML
+            stands for HyperText Markup Language. HTML has a hierarchical
+            structure, which splits up web pages into separate little pieces.
+            Each piece is called a tag, which has an opening and closing
+            bracket. Different kinds of HTML tags tell the browser to render it
+            in certain ways. Here&apos;s a little preview of some HTML below.
           </p>
           <Prism language="html" className="border-primary border-4 rounded">
             {html}
@@ -122,12 +172,16 @@ const Blog1 = () => {
           </p>
           <p>
             The {"<p>"} tag declares a paragraph. It separates a chunk of text
-            as a paragraph.
+            into a paragraph.
           </p>
           <p>
             The {"<ol> and <li>"} tags are for making lists. The parent, or
             outer tag, defines a list, and each child tag defines a list item.
             In this case, we use the {"<ol>"}, so the list is ordered.
+          </p>
+          <p>
+            We can also see some more interactive tags - {"<button>"} and{" "}
+            {"<input>"} - these are a little more self explanatory.
           </p>
           <p>
             When rendered by the browser, the HTML above should look something
@@ -167,7 +221,7 @@ const Blog1 = () => {
             would render as plain text with just about no style at all. CSS can:
           </p>
           <div className="text-center">
-            <p className=" text-secondary text-center">
+            <p className="text-secondary text-center">
               Change the color of text
             </p>
             <div className="text-center text-primaryLight bg-secondary h-24 relative mb-4">
@@ -182,7 +236,9 @@ const Blog1 = () => {
             tons of properties. 228 of them, to be exact. If I remember
             correctly. These properties can be applied to various HTML elements,
             whether it be by ID, class, tag type, or a combination of them.
+            Below shows the CSS that would be applied to each of those elements.
           </p>
+          <Prism language="css">{css}</Prism>
           <h3 className="text-lg font-semibold ">JavaScript</h3>
           <p>
             Last up, we have JavaScript. JavaScript is a more conventional
@@ -194,7 +250,7 @@ const Blog1 = () => {
             <span>
               <Link href="https://twitter.com/webdevfornoobs">
                 <a className="text-secondary underline">
-                  {"(check out our twitter if you haven&apos;t already!)"}
+                  {"(check out our Twitter if you haven't already!)"}
                 </a>
               </Link>
             </span>
@@ -204,11 +260,43 @@ const Blog1 = () => {
             simple - when you click the add button, it increments the counter.
             When you click the subtract button, it decrements.
           </p>
+          <Prism
+            language="javascript"
+            className="border-primary border-4 rounded"
+          >
+            {javascript}
+          </Prism>
+          <div>
+            <h4>Counter: {counter}</h4>
+            <br></br>
+            <div className="flex flex-row gap-2">
+              <button
+                className="bg-secondary rounded-lg p-2 text-primaryLight"
+                onClick={() => setCounter(counter + 1)}
+              >
+                Increment
+              </button>
+              <button
+                className="bg-secondary rounded-lg p-2 text-primaryLight"
+                onClick={() => setCounter(counter - 1)}
+              >
+                Decrement
+              </button>
+            </div>
+          </div>
           <h2>Conclusion</h2>
           <p>
             Now that you have an understanding of what HTML, CSS, and JavaScript
-            is, you&apos;re one step closer to making the website of your
-            dreams.
+            are, you&apos;re one step closer to making the website of your
+            dreams. If you&apos;re looking to really get to learn any of the
+            languages, look up some tutorials online! The internet has tons of
+            free resources for learning these languages.
+          </p>
+          <p>
+            I&apos;d definitely recommend checking out FreeCodeCamp. They have all
+            sorts of lessons for learning HTML, CSS, and JavaScript, and the
+            best part is that they&apos;re free! There is also thousands of Youtube
+            videos, and I&apos;m sure you can find another blog like mine out there.
           </p>
           <p>
             In years past, plain HTML, CSS, and JavaScript were used to create
