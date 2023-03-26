@@ -11,7 +11,7 @@ const Party = () => {
       <div className="p-6">
         <h1 className="text-6xl font-semibold">welcome to flavortown!</h1>
         <h2 className="text-4xl my-2">we hope you enjoy your stay.</h2>
-        <Link href="https://open.spotify.com/playlist/39jSQmsm2xaPa23B5wiMDk?si=661ce8b681274468&pt=875eec6ec26d79a401a85c363e4d1b9c">
+        <Link href="https://open.spotify.com/playlist/39jSQmsm2xaPa23B5wiMDk?si=a6d51f87e31f4769&pt=448bf84281266fcdf024dd6c95fbeb85">
           <a className="text-2xl underline text-secondary">
             add to the collaborative playlist!
           </a>
