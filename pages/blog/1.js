@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Prism } from "@mantine/prism";
 import Head from "next/head";
 import { useState } from "react";
 
@@ -159,9 +158,7 @@ const Blog1 = () => {
             bracket. Different kinds of HTML tags tell the browser to render it
             in certain ways. Here&apos;s a little preview of some HTML below.
           </p>
-          <Prism language="html" className="border-primary border-4 rounded">
-            {html}
-          </Prism>
+          {html}
           <p>
             The {"<div>"} tag is a basic divider. It&apos;s great for splitting
             up your HTML into different pieces.
@@ -238,7 +235,6 @@ const Blog1 = () => {
             whether it be by ID, class, tag type, or a combination of them.
             Below shows the CSS that would be applied to each of those elements.
           </p>
-          <Prism language="css">{css}</Prism>
           <h3 className="text-lg font-semibold ">JavaScript</h3>
           <p>
             Last up, we have JavaScript. JavaScript is a more conventional
@@ -260,12 +256,8 @@ const Blog1 = () => {
             simple - when you click the add button, it increments the counter.
             When you click the subtract button, it decrements.
           </p>
-          <Prism
-            language="javascript"
-            className="border-primary border-4 rounded"
-          >
-            {javascript}
-          </Prism>
+
+          {javascript}
           <div>
             <h4>Counter: {counter}</h4>
             <br></br>
@@ -293,10 +285,11 @@ const Blog1 = () => {
             free resources for learning these languages.
           </p>
           <p>
-            I&apos;d definitely recommend checking out FreeCodeCamp. They have all
-            sorts of lessons for learning HTML, CSS, and JavaScript, and the
-            best part is that they&apos;re free! There is also thousands of Youtube
-            videos, and I&apos;m sure you can find another blog like mine out there.
+            I&apos;d definitely recommend checking out FreeCodeCamp. They have
+            all sorts of lessons for learning HTML, CSS, and JavaScript, and the
+            best part is that they&apos;re free! There is also thousands of
+            Youtube videos, and I&apos;m sure you can find another blog like
+            mine out there.
           </p>
           <p>
             In years past, plain HTML, CSS, and JavaScript were used to create

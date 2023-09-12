@@ -16,11 +16,6 @@ export default function Home() {
           </Link>
         </li>
         <li className="text-4xl m-3 ">
-          <Link href="/blog">
-            <a className="hover:text-secondary link-animation">blog</a>
-          </Link>
-        </li>
-        <li className="text-4xl m-3 ">
           <Link href="/resume">
             <a className="hover:text-secondary link-animation">resume</a>
           </Link>
