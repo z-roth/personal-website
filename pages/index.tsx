@@ -1,6 +1,14 @@
 import Link from "next/link";
+import dynamic from "next/dynamic";
+import { SketchProps } from "../components/sketch";
+import sketch1 from "../sketches/sketch1";
 
-export default function Home() {
+const HomeScreenAnimation = dynamic<SketchProps>(
+  () => import("../components/sketch"),
+  { ssr: false }
+);
+
+const Home: React.FC = () => {
   return (
     <div className="p-6 fade-in-page">
       <h1 className="text-6xl m-3 font-semibold">zachary roth</h1>
@@ -26,6 +34,9 @@ export default function Home() {
           </Link>
         </li>
       </ul>
+      <HomeScreenAnimation sketch={sketch1} />
     </div>
   );
-}
+};
+
+export default Home;
