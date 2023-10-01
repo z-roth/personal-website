@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { Container } from "@mui/system";
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
-    <div className="p-6 fade-in-page">
+    <Container>
       <h1 className="text-6xl m-3 font-semibold">zachary roth</h1>
       <ul>
         <li className="text-4xl m-3 ">
@@ -26,6 +27,8 @@ export default function Home() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Container>
   );
-}
+};
+
+export default Home;
