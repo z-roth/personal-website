@@ -1,8 +1,9 @@
+import { Container } from "@mui/system";
 import Link from "next/link";
 
 const About = () => {
   return (
-    <div className="p-6 fade-in-page">
+    <Container>
       <h1 className="text-5xl m-3">
         <Link href="/">
           <b>zachary roth </b>
@@ -21,7 +22,7 @@ const About = () => {
         when i&#39;m not tinkering with code, i have about a million different
         hobbies.
       </p>
-    </div>
+    </Container>
   );
 };
 

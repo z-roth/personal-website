@@ -1,16 +1,9 @@
 import Link from "next/link";
-import dynamic from "next/dynamic";
-import { SketchProps } from "../components/sketch";
-import sketch1 from "../sketches/sketch1";
-
-const HomeScreenAnimation = dynamic<SketchProps>(
-  () => import("../components/sketch"),
-  { ssr: false }
-);
+import { Container } from "@mui/system";
 
 const Home: React.FC = () => {
   return (
-    <div className="p-6 fade-in-page">
+    <Container>
       <h1 className="text-6xl m-3 font-semibold">zachary roth</h1>
       <ul>
         <li className="text-4xl m-3 ">
@@ -34,8 +27,7 @@ const Home: React.FC = () => {
           </Link>
         </li>
       </ul>
-      <HomeScreenAnimation sketch={sketch1} />
-    </div>
+    </Container>
   );
 };
 
