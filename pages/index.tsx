@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { Container } from "@mui/system";
+import { Text, Container } from "theme-ui";
 
 const Home: React.FC = () => {
   return (
     <Container>
-      <h1 className="text-6xl m-3 font-semibold">zachary roth</h1>
+      <Text variant="h1">zachary roth</Text>
       <ul>
         <li className="text-4xl m-3 ">
           <Link href="/about">
