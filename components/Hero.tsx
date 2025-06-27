@@ -16,20 +16,22 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <Box sx={{ maxWidth: "50vw" }}>
+    <Box>
       <Box>
         <TypewriterText text="hiya! " variant="heading1" />
-        <TypewriterText text="i'm" variant="heading1" startDelay={1} />
-        <TypewriterText
-          text=" zack roth"
-          variant="heading1"
-          startDelay={1.2}
-          color="primary"
-        />
-        <TypewriterText text="." variant="heading1" startDelay={1.8} />
+        <Box sx={{ display: "inline-block" }}>
+          <TypewriterText text="i'm" variant="heading1" startDelay={1} />
+          <TypewriterText
+            text=" zack roth"
+            variant="heading1"
+            startDelay={1.2}
+            color="primary"
+          />
+          <TypewriterText text="." variant="heading1" startDelay={1.8} />
+        </Box>
       </Box>
-      <Spacer space={5} />
-      <Box>
+      <Spacer height={5} />
+      <Box sx={{ maxWidth: ["none", "50vw"] }}>
         <MotionText
           variant="heading1"
           animate={{ opacity: 1, y: 0 }}

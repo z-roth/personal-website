@@ -38,8 +38,8 @@ const ScrollingHobbies: React.FC = () => {
           transition={{ duration: 0.25, ease: "easeInOut" }}
           sx={{
             display: "inline-block",
-            whiteSpace: "pre",
             color: "primary",
+            wordBreak: "break-word",
           }}
         >
           {hobbies[index]}

@@ -1,18 +1,16 @@
 import { Box } from "theme-ui";
 
 type SpacerProps = {
-  space?: number;
-  axis?: "vertical" | "horizontal";
+  height?: number | number[];
+  width?: number | number[];
 };
 
-const Spacer: React.FC<SpacerProps> = ({ space = 3, axis = "vertical" }) => (
+const Spacer: React.FC<SpacerProps> = ({ height = 0, width = 0 }) => (
   <Box
     sx={{
-      height:
-        axis === "vertical" ? (theme) => theme.space[space] + "px" : "100%",
-      width:
-        axis === "horizontal" ? (theme) => theme.space[space] + "px" : "100%",
-      flexShrink: 0,
+      mt: height,
+      mr: width,
+      display: "inline-block",
     }}
   />
 );

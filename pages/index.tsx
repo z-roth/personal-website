@@ -5,7 +5,7 @@ import Hero from "../components/Hero";
 const Home: React.FC = () => {
   return (
     <Container>
-      <Spacer space={7} />
+      <Spacer height={[5, 7]} />
       <Hero />
     </Container>
   );

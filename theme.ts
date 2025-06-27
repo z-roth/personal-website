@@ -18,19 +18,19 @@ export const theme: Theme = {
     heading1: {
       fontFamily: "heading",
       fontWeight: "heading",
-      fontSize: 3,
+      fontSize: [6, 8],
       lineHeight: "heading",
     },
     heading2: {
       fontFamily: "heading",
       fontWeight: "heading",
-      fontSize: 2,
+      fontSize: [5, 6],
       lineHeight: "heading",
     },
     heading3: {
       fontFamily: "heading",
       fontWeight: "heading",
-      fontSize: 1,
+      fontSize: [3, 4],
       lineHeight: "heading",
     },
     body: {
@@ -44,7 +44,7 @@ export const theme: Theme = {
     body: 400,
     heading: 400,
   },
-  fontSizes: [16, 24, 40, 64],
+  fontSizes: [12, 14, 16, 20, 24, 32, 40, 48, 64, 80],
   lineHeights: {
     body: 1.6,
     heading: 1.25,
@@ -57,7 +57,7 @@ export const theme: Theme = {
     container: {
       maxWidth: "container",
       mx: "auto",
-      px: 6,
+      px: [3, 6],
     },
   },
 };
