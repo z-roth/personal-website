@@ -91,7 +91,6 @@ const Spirograph: React.FC = () => {
 
       p.setup = () => {
         p.createCanvas(dimension, dimension);
-        // p.background(theme.colors.background.toString());
         p.stroke(theme.colors.primary.toString());
         p.strokeWeight(2);
         p.noFill();
@@ -122,7 +121,7 @@ const Spirograph: React.FC = () => {
       animate={rotateControls}
       sx={{
         position: "absolute",
-        bottom: [-dimension / 1.75, "auto"],
+        bottom: [-dimension / 1.75, "auto"], // TODO: this is a mess, no idea how this works
         top: ["auto", 0],
         right: -dimension / 1.75 - 2 * r,
         width: dimension,
