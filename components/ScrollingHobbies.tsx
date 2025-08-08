@@ -28,24 +28,22 @@ const ScrollingHobbies: React.FC = () => {
   }, []);
 
   return (
-    <Box>
-      <AnimatePresence mode="popLayout">
-        <MotionText
-          key={hobbies[index]}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.25, ease: "easeInOut" }}
-          sx={{
-            display: "inline-block",
-            color: "primary",
-            wordBreak: "break-word",
-          }}
-        >
-          {hobbies[index]}
-        </MotionText>
-      </AnimatePresence>
-    </Box>
+    <AnimatePresence mode="popLayout">
+      <MotionText
+        key={hobbies[index]}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.25, ease: "easeInOut" }}
+        sx={{
+          display: "inline-block",
+          color: "primary",
+          whiteSpace: "nowrap",
+        }}
+      >
+        {hobbies[index]}
+      </MotionText>
+    </AnimatePresence>
   );
 };
 
