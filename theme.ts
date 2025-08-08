@@ -17,32 +17,28 @@ export const theme: Theme = {
   text: {
     heading1: {
       fontFamily: "heading",
-      fontWeight: "heading",
+      fontWeight: 700,
       fontSize: [6, 8],
       lineHeight: "heading",
     },
     heading2: {
       fontFamily: "heading",
-      fontWeight: "heading",
+      fontWeight: 600,
       fontSize: [5, 6],
       lineHeight: "heading",
     },
     heading3: {
       fontFamily: "heading",
-      fontWeight: "heading",
+      fontWeight: 500,
       fontSize: [3, 4],
       lineHeight: "heading",
     },
     body: {
       fontFamily: "body",
-      fontWeight: "body",
+      fontWeight: 400,
       fontSize: 0,
       lineHeight: "body",
     },
-  },
-  fontWeights: {
-    body: 400,
-    heading: 400,
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 40, 48, 64, 80],
   lineHeights: {
