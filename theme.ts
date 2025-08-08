@@ -48,7 +48,7 @@ export const theme: Theme = {
   sizes: {
     container: 1440,
   },
-  space: [0, 4, 8, 16, 32, 64, 80, 120],
+  space: [4, 8, 16, 24, 32, 40, 64, 80, 120],
   layout: {
     container: {
       maxWidth: "container",
