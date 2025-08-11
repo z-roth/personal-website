@@ -11,6 +11,7 @@ import {
   useTransform,
   useVelocity,
 } from "framer-motion";
+import useBreakpoints from "../hooks/useBreakpoints";
 
 const MotionBox = motion(Box);
 
@@ -18,27 +19,22 @@ const duration = 60;
 
 // Sometimes the spirograph can be stuttery if not using a build
 const Spirograph: React.FC = () => {
+  const breakpoint = useBreakpoints();
+  const [dimension, setDimension] = useState(
+    window.innerWidth < 768 ? window.innerWidth * 2.0 : window.innerWidth
+  );
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(scrollVelocity, {
     damping: 20,
-    stiffness: 100,
   });
-  const velocityFactor = useTransform(smoothVelocity, [-1000, 1000], [-5, 5], {
-    clamp: false,
-  });
-
-  const dimension =
-    window.innerWidth < 768 ? window.innerWidth * 2.0 : window.innerWidth; // Dimension of the canvas
-
-  // Spirograph parameters
-  const R = dimension / 4; // Radius of the fixed circle
-  const r = 10; // Radius of the rolling circle
-  const d = dimension / 4; // Distance from the center of the rolling circle to the drawing point
 
   const containerRef = useRef(null);
   const rotateControls = useAnimation();
   const directionRef = useRef(1);
+  const prevWidth = useRef(window.innerWidth);
+
+  const rightOffset = breakpoint === "mobile" ? 24 : 64;
 
   // Start the rotation animation
   useEffect(() => {
@@ -53,22 +49,17 @@ const Spirograph: React.FC = () => {
     });
   }, [rotateControls]);
 
-  // Update rotation based on scroll velocity
-  useMotionValueEvent(velocityFactor, "change", (velocity) => {
-    const absVelocity = Math.abs(velocity);
+  useMotionValueEvent(smoothVelocity, "change", (vel) => {
+    const scaledVelocity = Math.round(Math.abs(vel) / 100); // scale and round
+    const speed = Math.max(1, scaledVelocity); // never slower than 1x base speed
 
-    const newDirection =
-      velocity > 0 ? 1 : velocity < 0 ? -1 : directionRef.current;
+    const direction = vel === 0 ? directionRef.current : Math.sign(vel);
+    directionRef.current = direction;
 
-    if (newDirection !== directionRef.current) {
-      directionRef.current = newDirection;
-    }
-
-    const newDuration = Math.min(duration / absVelocity, duration);
-    console.log("New Duration: ", newDuration);
+    const newDuration = duration / speed;
 
     rotateControls.start({
-      rotate: 360 * directionRef.current,
+      rotate: 360 * direction,
       transition: {
         duration: newDuration,
         ease: "linear",
@@ -77,6 +68,23 @@ const Spirograph: React.FC = () => {
       },
     });
   });
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth === prevWidth.current) return;
+      const newDimension =
+        window.innerWidth < 768 ? window.innerWidth * 2.0 : window.innerWidth;
+      setDimension(newDimension);
+    };
+
+    // Add resize event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup on unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   // Initialize p5 sketch
   useEffect(() => {
@@ -98,6 +106,11 @@ const Spirograph: React.FC = () => {
       };
 
       p.draw = () => {
+        // Spirograph parameters
+        const R = dimension / 4; // Radius of the fixed circle
+        const r = 10; // Radius of the rolling circle
+        const d = dimension / 4; // Distance from the center of the rolling circle to the drawing point
+
         p.translate(p.width / 2, p.height / 2);
         // Draw multiple points per frame to speed up visibility
         for (let i = 0; i < 20; i++) {
@@ -111,26 +124,27 @@ const Spirograph: React.FC = () => {
     };
 
     const canvas = new p5(sketch, containerRef.current);
+
     return () => {
       canvas.remove();
     };
-  }, []);
+  }, [dimension]);
 
   return (
     <MotionBox
       animate={rotateControls}
       sx={{
         position: "absolute",
-        bottom: [-dimension / 1.75, "auto"], // TODO: this is a mess, no idea how this works
-        top: ["auto", 0],
-        right: -dimension / 1.75 - 2 * r,
+        bottom: -dimension / 2,
+        right: -dimension / 2 - rightOffset * 2,
         width: dimension,
         height: dimension,
-        overflow: "hidden",
+        transform: "translate(50%, 50%)",
+        pointerEvents: "none",
+        zIndex: -1,
       }}
-    >
-      <Box ref={containerRef} />
-    </MotionBox>
+      ref={containerRef}
+    />
   );
 };
 
