@@ -1,13 +1,14 @@
-import { Text, Container, Box } from "theme-ui";
-import Spacer from "../components/Spacer";
+import { Box, Container } from "theme-ui";
 import Hero from "../components/Hero";
+import Spacer from "../components/Spacer";
 
 const Home: React.FC = () => {
   return (
-    <Container>
-      <Spacer height={[5, 7]} />
-      <Hero />
-    </Container>
+    <Box sx={{ overflow: "hidden" }}>
+      <Container>
+        <Hero />
+      </Container>
+    </Box>
   );
 };
 
