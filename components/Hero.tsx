@@ -24,7 +24,8 @@ const Hero: React.FC = () => {
         sx={{
           flexDirection: "column",
           height: "100%",
-          justifyContent: "center",
+          justifyContent: [undefined, "center"],
+          marginTop: [4, 0],
         }}
       >
         <Box>
