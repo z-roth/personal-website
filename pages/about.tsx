@@ -1,5 +1,5 @@
-import { Container } from "@mui/system";
 import Link from "next/link";
+import { Container } from "theme-ui";
 
 const About = () => {
   return (

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import p5 from "p5";
-import { Box } from "@mui/system";
+import { Box } from "theme-ui";
 
 export interface SketchProps {
   sketch: (p5Instance: p5) => void;
