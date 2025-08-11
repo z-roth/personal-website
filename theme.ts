@@ -56,4 +56,5 @@ export const theme: Theme = {
       px: [3, 6],
     },
   },
+  breakpoints: ["768px"],
 };
