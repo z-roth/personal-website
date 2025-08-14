@@ -36,13 +36,13 @@ export const theme: Theme = {
     body: {
       fontFamily: "body",
       fontWeight: 400,
-      fontSize: 0,
+      fontSize: [1, 2],
       lineHeight: "body",
     },
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 40, 48, 64, 80],
   lineHeights: {
-    body: 1.6,
+    body: 1.5,
     heading: 1.25,
   },
   sizes: {
