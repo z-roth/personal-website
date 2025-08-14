@@ -1,10 +1,10 @@
-import { Box, Flex, Text } from "theme-ui";
+import { Box, Container, Flex, Text } from "theme-ui";
 import TypewriterText from "./TypewriterText";
 import { motion } from "framer-motion";
 import Spacer from "./Spacer";
-import { useEffect } from "react";
 import ScrollingHobbies from "./ScrollingHobbies";
 import dynamic from "next/dynamic";
+import { forwardRef } from "react";
 
 const Spirograph = dynamic(() => import("./Spirograph"), {
   ssr: false,
@@ -12,7 +12,7 @@ const Spirograph = dynamic(() => import("./Spirograph"), {
 
 const MotionText = motion(Text);
 
-const Hero: React.FC = () => {
+const Hero = forwardRef((_, ref) => {
   return (
     <Box
       sx={{
@@ -20,53 +20,55 @@ const Hero: React.FC = () => {
         position: "relative",
       }}
     >
-      <Flex
+      <Container
         sx={{
           flexDirection: "column",
-          height: "100%",
+          height: "100svh",
           justifyContent: [undefined, "center"],
           marginTop: [4, 0],
+          display: "flex",
         }}
       >
-        <Box>
-          <TypewriterText text="hey! " variant="heading1" />
-          <Box sx={{ display: "inline-block" }}>
-            <TypewriterText text="i'm" variant="heading1" startDelay={1} />
-            <TypewriterText
-              text=" zack roth"
-              variant="heading1"
-              startDelay={1.2}
-              color="primary"
-            />
-            <TypewriterText text="." variant="heading1" startDelay={1.8} />
+        <Flex sx={{ flexDirection: "column", px: 2 }}>
+          <Box ref={ref}>
+            <TypewriterText text="hey! " variant="heading1" />
+            <Box sx={{ display: "inline-block" }}>
+              <TypewriterText text="i'm" variant="heading1" startDelay={1} />
+              <TypewriterText
+                text=" zack roth"
+                variant="heading1"
+                startDelay={1.2}
+                color="primary"
+              />
+              <TypewriterText text="." variant="heading1" startDelay={1.8} />
+            </Box>
           </Box>
-        </Box>
-        <Spacer height={5} />
-        <Flex sx={{ flexDirection: "column" }}>
-          <MotionText
-            variant="heading2"
-            animate={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 100 }}
-            transition={{ duration: 0.5, delay: 2.2 }}
-          >
-            {"i mostly make apps and websites, "}
-          </MotionText>
-          <MotionText
-            variant="heading2"
-            animate={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 100 }}
-            transition={{ duration: 0.5, delay: 2.8 }}
-            sx={{}}
-          >
-            {"but i'm also a "}
-            <ScrollingHobbies />
-          </MotionText>
+          <Spacer height={5} />
+          <Flex sx={{ flexDirection: "column" }}>
+            <MotionText
+              variant="heading2"
+              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 100 }}
+              transition={{ duration: 0.5, delay: 2.2 }}
+            >
+              {"i mostly make apps and websites, "}
+            </MotionText>
+            <MotionText
+              variant="heading2"
+              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 100 }}
+              transition={{ duration: 0.5, delay: 2.8 }}
+            >
+              {"but i'm also a "}
+              <ScrollingHobbies />
+            </MotionText>
+          </Flex>
+          <Spacer height={6} />
         </Flex>
-        <Spacer height={6} />
-      </Flex>
+      </Container>
       <Spirograph />
     </Box>
   );
-};
+});
 
 export default Hero;
